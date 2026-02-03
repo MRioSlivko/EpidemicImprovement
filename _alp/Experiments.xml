@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Experiments>
+	<SimulationExperiment ActiveObjectClassId="1315818441457">
+		<Id>1315818441459</Id>
+		<Name><![CDATA[Simulation]]></Name>
+		<CommandLineArguments/>
+		<MaximumMemory>512</MaximumMemory>
+		<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
+		<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+		<SeedValue>1</SeedValue>
+		<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+		<VmArgs/>
+		<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+		<Presentation>
+			<Text>
+				<Id>1315831592153</Id>
+				<Name><![CDATA[text6]]></Name>
+				<X>50</X>
+				<Y>170</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[This is an agent based model of spread of contagious disease. The problem statement:
+
+*  We are considering a population of 10000 people. They live in the area 10 by 10 kilometers and are evenly spread around that area.
+*  A person knows everybody who lives closer than 1 kilometer to him.
+*  Initially 10 random people are sick and infectious, and everybody else is susceptible (none are immune).
+*  If an infectious person contacts a susceptible person, the latter gets infected with the probability 0.1. 
+*  Having been infected, a person does not immediately become infectious. There is a latent period that lasts from 3 to 6 days.
+    The people in the latent period are called exposed.
+*  The illness duration after the latent period (i.e. the duration of the infectious phase) is uniformly distributed between 7 and 15 days.
+*  During the infectious phase a person on average contacts 5 people he knows per day. 
+*  When the person recovers, he gets immune to the disease, but not forever. The immunity lasts from 2 to 3 months. 
+
+The output of the model is the number of infectious people over time. 
+
+The terminology and overall structure of that problem is taken from the compartmental models in epidemiology, namely from the
+SEIR (Susceptible Exposed Infectious Recovered) model. SEIR problem is originally solved using differential equations; the approach
+is the same as in system dynamics. We, however, are adding details that are not well captured by compartmental (aggregated) models:
+space and communication dependent on space and uniformly distributed phase durations. The rationale behind using the agent
+based approach is its naturalness: we may not know how to derive global equations for a particular disease, but we know the course
+of the disease and can easily model it at individual level.
+
+You can vary the parameters of the model on the fly and watch the disease dynamics.]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>11</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Text>
+				<Id>1389996439698</Id>
+				<Name><![CDATA[text3]]></Name>
+				<X>170</X>
+				<Y>30</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-12490271</Color>
+				<Text><![CDATA[Agent Based Epidemic Model]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>26</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Image>
+				<Id>1389996439700</Id>
+				<Name><![CDATA[image2]]></Name>
+				<X>50</X>
+				<Y>30</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>100</Width>
+				<Height>120</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>epidemic</PackageName>
+						<ClassName>book.png</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>true</OriginalSize>
+			</Image>
+			<Image>
+				<Id>1537375111870</Id>
+				<Name><![CDATA[image1]]></Name>
+				<X>50</X>
+				<Y>700</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<OnClickCode>getExperimentHost().openWebSite("https://www.anylogic.com");</OnClickCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>200</Width>
+				<Height>75</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>epidemic</PackageName>
+						<ClassName>AnyLogic model logo dark.png</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>false</OriginalSize>
+			</Image>
+		</Presentation>
+		<Parameters>
+			<Parameter>
+				<ParameterName>LatencyMin</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>LatencyMax</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>InfectiousMin</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>InfectiousMax</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>ImmuneMin</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>ImmuneMax</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>InfectionProbability</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>ContactsPerDay</ParameterName>
+			</Parameter>
+		</Parameters>
+		<PresentationProperties>
+			<EnableZoomAndPanning>false</EnableZoomAndPanning>
+			<ExecutionMode>realTimeScaled</ExecutionMode>
+			<Title>Epidemic : Simulation</Title>
+			<EnableDeveloperPanel>true</EnableDeveloperPanel>
+			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+			<RealTimeScale>25.0</RealTimeScale>
+		</PresentationProperties>
+		<ModelTimeProperties>
+			<StopOption>Never</StopOption>
+			<InitialDate>1315818441456</InitialDate>
+			<InitialTime>0.0</InitialTime>
+			<FinalDate>1315824441456</FinalDate>
+			<FinalTime>100.0</FinalTime>
+		</ModelTimeProperties>
+		<BypassInitialScreen>false</BypassInitialScreen>
+	</SimulationExperiment>
+</Experiments>
