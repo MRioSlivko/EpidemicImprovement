@@ -540,6 +540,14 @@
 			<Expression2Flag>true</Expression2Flag>
 			<Title>Immune</Title>
 		</DatasetExpression>
+		<DatasetExpression>
+			<Id>1770317083459</Id>
+			<Expression>my_dataset1</Expression>
+			<Color>-16777216</Color>
+			<Expression2>nDead</Expression2>
+			<Expression2Flag>true</Expression2Flag>
+			<Title>Dead</Title>
+		</DatasetExpression>
 		<SamplesToKeep>366</SamplesToKeep>
 		<VerScaleToExpression>10000</VerScaleToExpression>
 		<VerScaleType>FIXED</VerScaleType>
@@ -586,4 +594,57 @@
 			</EmbeddedObjectPresentation>
 		</Presentation>
 	</Group>
+	<Control Type="Slider">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1770311037388</Id>
+		<Name><![CDATA[slider]]></Name>
+		<X>60</X>
+		<Y>130</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="158.989" Height="30">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<Enabled>true</Enabled>
+		</BasicProperties>
+		<ExtendedProperties>
+			<DefaultValueCode>0</DefaultValueCode>
+			<Orientation>HORIZONTAL</Orientation>
+			<MinValue>0</MinValue>
+			<MaxValue>1</MaxValue>
+			<Step>1</Step>
+			<LinkTo>true</LinkTo>
+			<Link>MortalityPropability</Link>
+		</ExtendedProperties>
+	</Control>
+	<Text>
+		<Id>1770311086078</Id>
+		<Name><![CDATA[text10]]></Name>
+		<X>10</X>
+		<Y>110</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[Mortality propability]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>12</Size>
+			<Style>0</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
 </Presentation>

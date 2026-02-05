@@ -162,6 +162,12 @@ You can vary the parameters of the model on the fly and watch the disease dynami
 			<Parameter>
 				<ParameterName>ContactsPerDay</ParameterName>
 			</Parameter>
+			<Parameter>
+				<ParameterName>MortalityPropability</ParameterName>
+			</Parameter>
+			<Parameter>
+				<ParameterName>nDead</ParameterName>
+			</Parameter>
 		</Parameters>
 		<PresentationProperties>
 			<EnableZoomAndPanning>false</EnableZoomAndPanning>

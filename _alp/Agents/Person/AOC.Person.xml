@@ -148,11 +148,11 @@
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1315818658667</Id>
 			<Name><![CDATA[Immune]]></Name>
-			<X>100</X>
-			<Y>420</Y>
+			<X>270</X>
+			<Y>410</Y>
 			<Label>
-				<X>10</X>
-				<Y>10</Y>
+				<X>22</X>
+				<Y>14</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
 			<PresentationFlag>true</PresentationFlag>
@@ -160,6 +160,38 @@
 			<Properties Width="100" Height="30">
 				<EntryAction>oval.setFillColor( cornflowerBlue );</EntryAction>
 				<FillColor>-10185235</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
+			<Id>1770309430405</Id>
+			<Name><![CDATA[branch]]></Name>
+			<X>150</X>
+			<Y>425</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Properties/>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1770309535422</Id>
+			<Name><![CDATA[Dead]]></Name>
+			<X>95</X>
+			<Y>480</Y>
+			<Label>
+				<X>30</X>
+				<Y>15</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<EntryAction>oval.setFillColor( black );
+main.nDead++;</EntryAction>
+				<FillColor>-5952982</FillColor>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
@@ -285,11 +317,11 @@
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>70</Y>
+					<Y>65</Y>
 				</Point>
 			</Points>
 			<IconOffset>29.0</IconOffset>
-			<Properties Source="1315818651881" Target="1315818658667" Trigger="timeout">
+			<Properties Source="1315818651881" Target="1770309430405" Trigger="timeout">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[uniform( main.InfectiousMin, main.InfectiousMax )]]></Code>
 					<Unit Class="TimeUnits">DAY</Unit>
@@ -309,8 +341,8 @@
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1315818686139</Id>
 			<Name><![CDATA[EndOfImmunity]]></Name>
-			<X>200</X>
-			<Y>440</Y>
+			<X>315</X>
+			<Y>410</Y>
 			<Label>
 				<X>60</X>
 				<Y>-165</Y>
@@ -324,16 +356,16 @@
 					<Y>0</Y>
 				</Point>
 				<Point>
-					<X>50</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>50</X>
-					<Y>-340</Y>
-				</Point>
-				<Point>
 					<X>0</X>
-					<Y>-340</Y>
+					<Y>-30</Y>
+				</Point>
+				<Point>
+					<X>5</X>
+					<Y>-310</Y>
+				</Point>
+				<Point>
+					<X>-115</X>
+					<Y>-310</Y>
 				</Point>
 			</Points>
 			<IconOffset>214.0</IconOffset>
@@ -392,6 +424,86 @@
 				</Rate>
 				<MessageType>Object</MessageType>
 				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1770309648165</Id>
+			<Name><![CDATA[transition1]]></Name>
+			<X>162</X>
+			<Y>425</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>108</X>
+					<Y>0</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1770309430405" Target="1315818658667" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">DAY</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_DAY</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1770309759973</Id>
+			<Name><![CDATA[transition]]></Name>
+			<X>150</X>
+			<Y>435</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>45</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1770309430405" Target="1770309535422" Trigger="timeout">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">DAY</Unit>
+				</Timeout>
+				<Condition>randomTrue(main.MortalityPropability)</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_DAY</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>false</DefaultTransition>
 				<FilterType>unconditionally</FilterType>
 				<EqualsExpression>"text"</EqualsExpression>
 				<SatisfiesExpression>true</SatisfiesExpression>
